@@ -58,16 +58,15 @@ def dEcJwt(t):
         log.error(str(e))
         return None
 
-@app.route('/login', methods=['POST'])
+@app.route('/xg', methods=['GET'])
 def login_api():
     #H4RDIXXXXX IS HERE?
     try:
-        data = request.get_json()
-        if not data or 'uid' not in data or 'password' not in data:
-            return jsonify({"error": "Missing uid or password"}), 400
+        uid = request.args.get('uid')
+        pas = request.args.get('Pw')
         
-        uid = data['uid']
-        pas = data['password']
+        if not uid or not pas:
+            return jsonify({"error": "Missing uid or Pw parameter"}), 400
 
         gu="https://100067.connect.garena.com/oauth/guest/token/grant"
 

@@ -48,25 +48,17 @@ The API will be accessible at `http://0.0.0.0:5000`.
 
 ### API Endpoint
 
-*   **Endpoint:** `/login`
-*   **Method:** `POST`
-*   **Content-Type:** `application/json`
+*   **Endpoint:** `/xg`
+*   **Method:** `GET`
 
-#### Request Body
+#### Query Parameters
 
-The request body should be a JSON object containing the `uid` and `password`:
-
-```json
-{
-    "uid": "YOUR_UID",
-    "password": "YOUR_PASSWORD"
-}
-```
+The `uid` and `Pw` parameters should be passed as query parameters in the URL.
 
 #### Example Request (using `curl`)
 
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"uid": "4562891100", "password": "H4XRKBYYBY2F-S1X_TEAM"}' http://127.0.0.1:5000/login
+curl "http://127.0.0.1:5000/xg?uid=4562891100&Pw=H4XRKBYYBY2F-S1X_TEAM"
 ```
 
 #### Example Response
